@@ -8,6 +8,7 @@
 <script>
   export default { // 向外默认暴露一个配置对象（配置对象与Vue一致）
     props:{
+      addTodo: Function
     },
     data(){
       return{
@@ -27,9 +28,8 @@
           title,
           type: false// 默认未完成
         }
-        // 3，添加到todos,调用父组件的自定义事件
-        // 自定义事件：子组件触发父组件的绑定事件
-        this.$emit('addTodo', todo)
+        // 3，添加到todos
+        this.addTodo(todo)
         // 4，清除输入
         this.title = ''
       }

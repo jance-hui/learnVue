@@ -14,11 +14,11 @@
 </template>
 
 <script>
-  import PubSub from 'pubsub-js'
   export default { // 向外默认暴露一个配置对象（配置对象与Vue一致）
     props:{
       todo:Object,
-      index:Number
+      index:Number,
+      delTodo:Function
     },
     data(){
       return{
@@ -40,8 +40,7 @@
       delTitle(){
         const {todo, index} = this
         if(window.confirm('确认删除${todo.title}?')){
-          //this.delTodo(index)
-          PubSub.publish('delTodo', index)
+          this.delTodo(index)
         }
       }
     }

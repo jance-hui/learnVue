@@ -1,37 +1,19 @@
 <template>
   <div class="todo-footer">
     <label>
-      <input type="checkbox" v-model="isAllCheck">
+      <!--<input type="checkbox" v-model="isAllCheck">-->
+      <slot name="check"></slot>
     </label>
-    <span><span>已完成{{num}}</span> / 全部{{todos.length}}</span>
-    <button class="btn btn-danger" v-show="num >0" @click="delOk">删除已完成任务</button>
+    <!--<span><span>已完成{{num}} / 全部{{todos.length}}</span></span>-->
+    <slot name="count"></slot>
+    <!--<button class="btn btn-danger" v-show="num >0" @click="delOk">删除已完成任务</button>-->
+    <slot name="delBtn"></slot>
   </div>
 </template>
 
 <script>
   export default { // 向外默认暴露一个配置对象（配置对象与Vue一致）
-    props:{
-      todos:Array,
-      delOk:Function,
-      selectAll:Function
-    },
-    data(){
-      return{
-      }
-    },
-    computed:{
-      num(){
-        return this.todos.reduce((perTotal, todo) => perTotal + (todo.type?1:0), 0)
-      },
-      isAllCheck:{
-        get(){
-          return this.num === this.todos.length
-        },
-        set(value){ // value为当前checkBox的最新值
-          this.selectAll(value)
-        }
-      }
-    }
+
   }
 </script>
 

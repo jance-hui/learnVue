@@ -1,6 +1,6 @@
 <template>
   <ul class="todo-main">
-    <Item v-for="(todo, index) in todos" :key="index" :todo="todo" :index="index"/>
+    <Item v-for="(todo, index) in todos" :key="index" :todo="todo" :index="index"  :delTodo="delTodo"/>
   </ul>
 </template>
 
@@ -9,6 +9,7 @@
   export default { // 向外默认暴露一个配置对象（配置对象与Vue一致）
     props:{
       todos:Array,
+      delTodo:Function
     },
     components:{
       Item
