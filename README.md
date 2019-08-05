@@ -1,20 +1,20 @@
-# vue_demo
+# vue学习
 
 > A Vue.js project
 
-## Build Setup
+## 创建
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 测试环境运行
 npm run dev
 
-# build for production with minification
+# 打包
 npm run build
 
-# build for production and view the bundle analyzer report
+# 打包并查看报告
 npm run build --report
 ```
 
