@@ -20,14 +20,14 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-#一、Vue基础
+# 一、Vue基础
 
-####1、模板语法：
+#### 1. 模板语法：
     v-bind: / : 强制数据绑定
     v-on: / @ 强制事件监听
     {{...}} 向页面输出数据，可调用对象方法
                 
-####2.计算属性 ：
+#### 2. 计算属性 ：
 `computed`
 
     初始化 和 相关属性发生时执行
@@ -35,15 +35,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     
     注：计算属性存在缓存，多次读取只执行一次
                 
-####3.监视 
+#### 3. 监视 
 `watch配置 / $watch()方法`
     监视指定属性，属性变化时，函数直接调用
                 
-####4.class 与 style 绑定：
+#### 4. class 与 style 绑定：
     class绑定： :class="xxx" // xxx可为字符串、对象、数组
     style绑定： :style="{...}" // {...}为json对象
     
-####5.条件渲染：v-if / v-else 和 v-show
+#### 5. 条件渲染：v-if / v-else 和 v-show
     为true时显示，否则隐藏
     
     区别：v-if / v-else 结果为false时，在HTML中移除(内存中对象不存在)
@@ -51,16 +51,16 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     
     注：当需反复变换时，使用v-show，避免内存中反复创建、删除对象
     
-####6.列表渲染： v-for
+#### 6. 列表渲染： v-for
         对数组：v-for="(user, index) in users(数组)" :key="index"
         对对象：v-for="(user, key) in users[0](数组第一个对象)" :key="key"
     
-####7.列表搜索、过滤、排序
+#### 7. 列表搜索、过滤、排序
 `filter()`：对数组过滤
 
 `sort()`：对数组排序
                 
-####8.事件处理
+#### 8. 事件处理
     绑定监听：v-on:xxx="fun" / @xxx="fun" / $xxx="fun(参数)"
         默认事件形参为event，隐含属性对象为$event
     
@@ -79,10 +79,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         event.target.innerHTML：输出HTML值
         event.target.value：输出内容
     
-####9.表单数据绑定
+#### 9. 表单数据绑定
         使用v-model (双向绑定) 自动收集表单数据
     
-####10.Vue实例生命周期
+#### 10. Vue实例生命周期
     a.初始化状态
         beforeCreated() 刚在内存中创建，还未初始化data、methods
         cerated()       已在内存中创建，且已初始化data、methods，未编译
@@ -100,7 +100,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     ·created() / mounted() 方法常用于发送ajax请求、启动定时器等异步任务
     ·beforeDestory() 做收尾工作。如清除定时器
     
-####11.Vue动画
+#### 11. Vue动画
     操作 css 的 transtation / animation
     
     基本过渡动画：
@@ -118,7 +118,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
             xxx-leave-active    离开过程中
             xxx-leave-to        离开之后
     
-####12.过滤器
+#### 12. 过滤器
     对要显示的数据进行特定格式化后再显示
     
     注：为改变源数据，产生了新的对应数据
@@ -137,7 +137,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 <div>{{myData | filterName(arg)}}</div>
 ```    
     
-####13.指令
+#### 13. 指令
 `内置指令`
  
     v:text: 更新元素的textContent
@@ -171,13 +171,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     使用： 
             <p v-指令名="所传数据"></p>
     
-####14.自定义插件
+#### 14.自定义插件
     Vue插件是一个包括install方法的对象；
     
     通过install方法给Vue 或 Vue 实例添加方法，定义全局指令等。
                 
-#二、Vue组件化编码
-####1. .vue文件结构
+# 二、Vue组件化编码
+#### 1. .vue文件结构
 ```vue
 <template>
     <!--写 HTML 代码-->
@@ -193,7 +193,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     /*写 css 代码*/
 </style>
 ```    
-####2.Vue项目创建、打包、发布
+#### 2. Vue项目创建、打包、发布
 `创建`
 
     npm install -g vue-cil      // 使用vue-cli脚手架创建项目
@@ -217,7 +217,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         c.修改 dist 文件夹名为项目名 xxx
         d.拷贝至 Tomcat 动态服务器的 webapps 目录下：http"//localhost:8080/xxx 访问    
     
-####3.代码规范检查工具eslint
+#### 3. 代码规范检查工具eslint
 `提供以下支持：`
 
         ES 、 TSX 、 style检查 、 自定义错误与提示
@@ -231,13 +231,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         e.确保样式统一规则
         f.检查变量命名   
     
-####4.组件化编码步骤
+#### 4. 组件化编码步骤
     a.拆分组件
     b.编写静态组件
     c.编写动态组件
     d.组件间交互
     
-####5.本地数据存储
+#### 5. 本地数据存储
     localStorage(需对数据进行深度监视 deep:true )
 ```js
 /*
@@ -256,7 +256,7 @@ export default {
 }
 ```  
     
-####6.组件间通讯
+#### 6. 组件间通讯
     1.props
     2.自定义事件
     3.消息订阅与发布(PubSub库)
@@ -264,9 +264,9 @@ export default {
     5.vuex
     
 
-#三、Vue发生ajax请求
+# 三、Vue发生ajax请求
 
-####1.vue-resource
+#### 1. vue-resource
     a.下载插件：
 ```
 npm install --save vue-resource
@@ -289,7 +289,7 @@ Vue.use(VueResource) // 内部会给vm对象和组件对象添加一个属性：
       )
 ```          
     
-####2.Axios
+#### 2. Axios
     a.下载插件：
 ```
 npm install --save axios
@@ -308,6 +308,6 @@ npm install --save axios
     })
 ```     
 
-#四、Vue UI组件库
-#五、vue-router
-#六、通信方式之vuex
+# 四、Vue UI组件库
+# 五、vue-router
+# 六、通信方式之vuex
