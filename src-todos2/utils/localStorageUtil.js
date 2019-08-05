@@ -5,10 +5,10 @@
  */
 const TODOS_KEY = 'todos_key'
 export default {
-  saveTodos(todos){
+  saveTodos(todos){ // 更新数据
     window.localStorage.setItem(TODOS_KEY, JSON.stringify(todos))
   },
-  getTodos(){
+  getTodos(){ // 读取数据
     return JSON.parse(window.localStorage.getItem(TODOS_KEY) || '[]')
   },
 }

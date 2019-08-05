@@ -44,7 +44,7 @@
           alert('请求失败')
         }
       )
-      // 使用vue-resource发生ajax请求
+      // 使用axios发生ajax请求
       Axios.get(ajaxUrl).then(response=>{
           // 请求成功
           const results = response.data
