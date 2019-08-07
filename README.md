@@ -21,6 +21,7 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # 一、Vue基础
+详见[`VueTest`](https://github.com/jance-hui/learnVue/tree/master/VueTest)
 
 #### 1. 模板语法：
     v-bind: / : 强制数据绑定
@@ -177,7 +178,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     通过install方法给Vue 或 Vue 实例添加方法，定义全局指令等。
                 
 # 二、Vue组件化编码
+[`src-1`](https://github.com/jance-hui/learnVue/tree/master/src-1) 应用HelloWorld组件，显示应用HelloWorld组件
+
+[`src-2`](https://github.com/jance-hui/learnVue/tree/master/src-2) 填写个人建议组件，组件间通信props
+
+[`src-todos1`](https://github.com/jance-hui/learnVue/tree/master/src-todos1) 任务列表，组件间通信：props
+
+[`src-todos2`](https://github.com/jance-hui/learnVue/tree/master/src-todos2) 任务列表，组件间通信：自定义事件、消息订阅与发布(PubSuB)、slot插槽
 #### 1. .vue文件结构
+
 ```vue
 <template>
     <!--写 HTML 代码-->
@@ -265,6 +274,8 @@ export default {
     
 
 # 三、Vue发生ajax请求
+
+[`src-ajax`](https://github.com/jance-hui/learnVue/tree/master/src-ajax) ajax通信：vue-resource、axios
 
 #### 1. vue-resource
     a.下载插件：
