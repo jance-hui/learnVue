@@ -23,12 +23,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 一、Vue基础
 详见[`VueTest`](https://github.com/jance-hui/learnVue/tree/master/VueTest)
 
-#### 1. 模板语法：
+### 1. 模板语法：
     v-bind: / : 强制数据绑定
     v-on: / @ 强制事件监听
     {{...}} 向页面输出数据，可调用对象方法
                 
-#### 2. 计算属性 ：
+### 2. 计算属性 ：
 `computed`
 
     初始化 和 相关属性发生时执行
@@ -36,15 +36,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     
     注：计算属性存在缓存，多次读取只执行一次
                 
-#### 3. 监视 
+### 3. 监视 
 `watch配置 / $watch()方法`
     监视指定属性，属性变化时，函数直接调用
                 
-#### 4. class 与 style 绑定：
+### 4. class 与 style 绑定：
     class绑定： :class="xxx" // xxx可为字符串、对象、数组
     style绑定： :style="{...}" // {...}为json对象
     
-#### 5. 条件渲染：v-if / v-else 和 v-show
+### 5. 条件渲染：v-if / v-else 和 v-show
     为true时显示，否则隐藏
     
     区别：v-if / v-else 结果为false时，在HTML中移除(内存中对象不存在)
@@ -52,16 +52,16 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     
     注：当需反复变换时，使用v-show，避免内存中反复创建、删除对象
     
-#### 6. 列表渲染： v-for
+### 6. 列表渲染： v-for
         对数组：v-for="(user, index) in users(数组)" :key="index"
         对对象：v-for="(user, key) in users[0](数组第一个对象)" :key="key"
     
-#### 7. 列表搜索、过滤、排序
+### 7. 列表搜索、过滤、排序
 `filter()`：对数组过滤
 
 `sort()`：对数组排序
                 
-#### 8. 事件处理
+### 8. 事件处理
     绑定监听：v-on:xxx="fun" / @xxx="fun" / $xxx="fun(参数)"
         默认事件形参为event，隐含属性对象为$event
     
@@ -80,10 +80,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         event.target.innerHTML：输出HTML值
         event.target.value：输出内容
     
-#### 9. 表单数据绑定
+### 9. 表单数据绑定
         使用v-model (双向绑定) 自动收集表单数据
     
-#### 10. Vue实例生命周期
+### 10. Vue实例生命周期
     a.初始化状态
         beforeCreated() 刚在内存中创建，还未初始化data、methods
         cerated()       已在内存中创建，且已初始化data、methods，未编译
@@ -101,7 +101,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     ·created() / mounted() 方法常用于发送ajax请求、启动定时器等异步任务
     ·beforeDestory() 做收尾工作。如清除定时器
     
-#### 11. Vue动画
+### 11. Vue动画
     操作 css 的 transtation / animation
     
     基本过渡动画：
@@ -119,7 +119,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
             xxx-leave-active    离开过程中
             xxx-leave-to        离开之后
     
-#### 12. 过滤器
+### 12. 过滤器
     对要显示的数据进行特定格式化后再显示
     
     注：为改变源数据，产生了新的对应数据
@@ -138,7 +138,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 <div>{{myData | filterName(arg)}}</div>
 ```    
     
-#### 13. 指令
+### 13. 指令
 `内置指令`
  
     v:text: 更新元素的textContent
@@ -172,7 +172,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     使用： 
             <p v-指令名="所传数据"></p>
     
-#### 14.自定义插件
+### 14.自定义插件
     Vue插件是一个包括install方法的对象；
     
     通过install方法给Vue 或 Vue 实例添加方法，定义全局指令等。
@@ -185,7 +185,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 [`src-todos1`](https://github.com/jance-hui/learnVue/tree/master/src-todos1) 任务列表，组件间通信：props
 
 [`src-todos2`](https://github.com/jance-hui/learnVue/tree/master/src-todos2) 任务列表，组件间通信：自定义事件、消息订阅与发布(PubSuB)、slot插槽
-#### 1. .vue文件结构
+### 1. .vue文件结构
 
 ```vue
 <template>
@@ -202,7 +202,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     /*写 css 代码*/
 </style>
 ```    
-#### 2. Vue项目创建、打包、发布
+### 2. Vue项目创建、打包、发布
 `创建`
 
     npm install -g vue-cil      // 使用vue-cli脚手架创建项目
@@ -226,7 +226,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         c.修改 dist 文件夹名为项目名 xxx
         d.拷贝至 Tomcat 动态服务器的 webapps 目录下：http"//localhost:8080/xxx 访问    
     
-#### 3. 代码规范检查工具eslint
+### 3. 代码规范检查工具eslint
 `提供以下支持：`
 
         ES 、 TSX 、 style检查 、 自定义错误与提示
@@ -240,13 +240,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         e.确保样式统一规则
         f.检查变量命名   
     
-#### 4. 组件化编码步骤
+### 4. 组件化编码步骤
     a.拆分组件
     b.编写静态组件
     c.编写动态组件
     d.组件间交互
     
-#### 5. 本地数据存储
+### 5. 本地数据存储
     localStorage(需对数据进行深度监视 deep:true )
 ```js
 /*
@@ -265,7 +265,7 @@ export default {
 }
 ```  
     
-#### 6. 组件间通讯
+### 6. 组件间通讯
     1.props
     2.自定义事件
     3.消息订阅与发布(PubSub库)
@@ -277,7 +277,7 @@ export default {
 
 [`src-ajax`](https://github.com/jance-hui/learnVue/tree/master/src-ajax) ajax通信：vue-resource、axios
 
-#### 1. vue-resource
+### 1. vue-resource
     a.下载插件：
 ```
 npm install --save vue-resource
@@ -300,7 +300,7 @@ Vue.use(VueResource) // 内部会给vm对象和组件对象添加一个属性：
       )
 ```          
     
-#### 2. Axios
+### 2. Axios
     a.下载插件：
 ```
 npm install --save axios
@@ -320,5 +320,192 @@ npm install --save axios
 ```     
 
 # 四、Vue UI组件库
-# 五、vue-router
+[`src-mintUI`](https://github.com/jance-hui/learnVue/tree/master/src-mintUI) 应用 mint-ui 组件库
+
+### 1. Mint UI
+下载
+```
+npm install --save mint-ui
+```
+按需打包：
+        
+        下载：npm install --save-dev babel-plugin-conponent
+        修改 babel 配置：添加 mint-ui 配置
+```
+"plugins": ["transform-runtime",["component", [
+{
+"libraryName": "mint-ui",
+"style": true
+}
+]]]
+```
+组件分类：`标签组件`、`非标签组件`
+
+使用：
+
+main.js引入
+```js
+import {Button} from 'mint-ui' // 引入mint-ui
+Vue.component(Button.name, Button) // 定义全局标签组件属性
+```
+App.vue使用
+```vue
+<template>
+<!-- .native：使用原生方法 -->
+<mt-button @click.native="handleClick" type="primary" style="width: 100%">Test</mt-button>
+</template>
+<script>
+import {Toast} from 'mint-ui'
+export default {
+    methods: {
+        handleClick () {
+        Toast('点击了测试');
+        }
+    }
+}
+</script>
+```
+# 五、vue-router 路由
+[`src-router`](https://github.com/jance-hui/learnVue/tree/master/src-router)  vue-router 路由学习
+
+### 1. 下载
+```
+npm install --save vue-router
+```
+### 2. 使用路由三步
+    1. router文件夹下，index.js文件 定义路由组件
+    2. src/main.js下，注册路由
+    3. .vue文件使用路由
+### 3. 相关API
+1.定义路由组件`router/index.js`
+```js
+/*路由器模块*/
+// 引入路由
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+// 引入路由组件
+import About from '../pages/about/App'
+import Home from '../pages/home/App'
+import Msg from '../pages/msg/App'
+import News from '../pages/news/App'
+import MsgDetail from '../pages/msgDetail/App'
+
+// 使用路由
+Vue.use(VueRouter)
+// 1.创建路由器的构造函数
+export default new VueRouter({
+  // 2.配置n个路由
+  routes: [
+    { // 一般路由
+      path: '/about',
+      component: About
+    },
+    {
+      path: '/home',
+      component: Home,
+      children:[ // 嵌套路由
+        {
+          path: '/home/news', // path最左侧 / 永远代表根路径
+          component: News
+        },{
+          path: 'msg', // 路径简易写法
+          component: Msg
+        }, {
+          path: '', // 默认显示
+          redirect: '/home/news'
+        }
+      ]
+    },
+    {
+      path: '/', // 自动跳转路由
+      redirect: '/home' // 重定向home
+    }
+  ]
+})
+```
+2.注册路由器`src/main,js`
+```js
+// 引入router
+import router from './router'
+
+new Vue({ // 配置对象的属性都是一些确定的名称，不能随便修改
+  ...
+  router, // 使用路由
+})
+```
+3.使用路由标签`xxx.vue`
+```vue
+<!--生成路由链接-->
+<router-link to="/path">xxx</router-link>
+
+<!--显示路由组件界面-->
+<router-view></router-view>
+```
+### 4. 缓存路由组件对象
+    注： 默认情况下被使切换的路由组件对象会死亡释放，再次回来会重新创建
+`<keep-alive>`实现缓存
+```vue
+<!--使用<keep-alive>标签实现缓存-->
+<keep-alive>
+    <router-view></router-view>
+</keep-alive>
+```
+### 5. 向路由组件传递数据
+1.链接方式：路由路径携带参数（`params` / `query`）
+
+`router/index.js`中定义
+```js
+{
+// 使用params传递数据一：配置路由
+path: 'detail/:id',
+component: MsgDetail
+}
+```
+```vue
+<!--传数据-->
+<!--使用params传递数据二：传参数（使用json格式）-->
+<router-link :to="`/home/msg/detail/${message.id}`">{{message.title}}</router-link>
+```
+```js
+// 接收数据
+// 使用params传递数据三：接收参数this.$route.params.xxx
+const id = this.$route.params.id*1 // 防止问文本
+```
+2.`<router-view>`携带参数，路由组件props接收
+```vue
+<!--发送-->
+<!--使用<router-view>标签传递数据一： msg="xxx"(xxx可为字符串。若为变量msg前加:)-->
+<router-view msg="aaa"></router-view>
+```
+```vue
+<!--接收-->
+<template>
+  <div>
+    <!--使用<router-view>标签传递数据三：显示-->
+    <p>{{msg}}</p>
+  </div>
+</template>
+<script>
+  export default {
+    props:{
+      // 使用<router-view>标签传递数据二：props接收数据
+      msg:String
+    }
+  }
+</script>
+```
+### 6. 编程式路由导航
+`编程式路由导航`：不使用<a/>标签跳转页面，使用js方式跳转
+
+相关API
+
+    this.$router.push( path )   相当于点击当前路由链接（可返回到当前路由页面）
+    
+    this.$router.replace( path )   用心路由代替当前路由（不可返回到当前路由页面）
+    
+    this.$router.back()   请求（返回）上一个记录路由
+    
+    this.$router.go( -1 )   请求（返回）上一个记录路由
+    
+    this.$router.go( 1 )   请求下一个记录路由
 # 六、通信方式之vuex
