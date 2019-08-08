@@ -509,3 +509,134 @@ const id = this.$route.params.id*1 // 防止问文本
     
     this.$router.go( 1 )   请求下一个记录路由
 # 六、通信方式之vuex
+`vuex` 对Vue应用中多个组件的共享状态进行 `集中式` 管理（读写）
+### 1. vuex理解
+#### 1.1 状态自管理应用
+`state`：驱动应用的数据源（data(){...}）
+
+`view`：以声明方式将 `state` 映射到视图
+
+`actions`：响应在 `view` 上的用户输入导致的状态变化(包含 n 个更新状态的方法)
+
+![状态自管理应用](./README-IMG/vuex-1.png)
+#### 1.2. 解决多组件共享状态的问题
+    多视图依赖同一状态；
+    
+    来自不同视图的行为需要变更为同一状态
+### 2. 核心概念及相关API
+![核心概念](./README-IMG/vuex-2.png)
+#### 2.1 `state`
+    1. 管理状态的 对象
+    2. 唯一的
+```js
+const state = {
+  xxx: String
+}
+```
+#### 2.2 `mutations`
+    
+    1. 包含多个直接更新 state 的方法（回调函数）的对象
+    2. 谁来触发: action 中的 commit('mutation 名称')
+    3. 只能包含同步的代码, 不能写异步代码
+```js
+const state = {
+  xxx: String
+}
+```
+#### 2.3 `actions`
+    
+    1. 包含多个事件回调函数的 对象
+    2. 通过执行: commit() 来触发 mutations 的调用, 间接更新 state
+    3. 谁来触发: 组件中: $store.dispatch('action 名称', data) // 'zzz' 
+    4. 可以包含异步代码(定时器, ajax)
+```js
+const actions = {
+  zzz ({commit, state}, data) {
+  commit('yyy', {data})
+}
+}
+```
+#### 2.4 `getter`
+
+    1. 包含多个计算属性（get）的 对象
+    2. 组件中使用: $store.getters.xxx 来读取
+```js
+const getters = {
+  mmm (state) {
+    return xxx
+  }
+}
+```
+#### 2.5 `modules`
+
+    1. 包含多个 model 的对象
+    2. 一个 model 是一个 store 的配置对象
+    3. 与一个组件(包含有共享数据)对应
+
+### 3. 使用`vuex`
+1.`store`文件夹下新建`store.js`文件，vuex向外暴露一个store对象
+```js
+/*
+vuex的核心管理对象模块
+*/
+import Vue from 'vue'
+import Vuex from 'vuex' // 引入Vuex
+// 引入子js
+import state from './state'
+import mutations from './mutations'
+import actions from './actions'
+import getters from './getters'
+// 使用Vuex
+Vue.use(Vuex)
+// 声明
+export default new Vuex.Store({
+  state, // 状态
+  mutations, //包含多个更新state函数的对象
+  actions, // 包含多个对应事件回调函数的对象
+  getters // 包含多个getter计算属性函数的对象
+})
+```
+        
+2.`main.js`中映射store
+```js
+...
+import store from './store/store'
+...
+
+new Vue({
+ ...
+  store
+})
+```
+3.组件中使用
+```vue
+<template>
+<!--使用数据-->
+    <span><span>已完成{{xxx}}</span> / 全部{{mmm}}</span>
+    <button class="btn btn-danger" v-show="xxx >0" @click="zzz(data)">删除已完成任务</button>
+</template>
+
+<script>
+    // js中调用
+    import {mapState, mapGetters, mapActions} from 'vuex' 
+    export default {
+    computed: {
+        ...mapState(['xxx']), 
+        ...mapGetters(['mmm']), 
+    },
+     methods: {
+        ...mapActions(['zzz'])
+    }
+    }
+</script>
+```
+### 4. `$store`对象
+
+    1. 所有用 vuex 管理的组件中都多了一个属性$store, 它就是一个 store 对象
+    
+    2. 属性:
+        state: 注册的 state 对象
+        getters: 注册的 getters 对象
+    
+    3. 方法:
+        dispatch(actionName, data): 分发调用 action

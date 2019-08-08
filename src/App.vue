@@ -1,5 +1,6 @@
 <template>
   <div>
+    Hello VUE
   </div>
 </template>
 
@@ -8,6 +9,5 @@
   }
 </script>
 
-<style scoped>
-
+<style>
 </style>
