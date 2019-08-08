@@ -182,9 +182,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 [`src-2`](https://github.com/jance-hui/learnVue/tree/master/src-2) 填写个人建议组件，组件间通信props
 
-[`src-todos1`](https://github.com/jance-hui/learnVue/tree/master/src-todos1) 任务列表，组件间通信：props
+[`src-todos-props`](https://github.com/jance-hui/learnVue/tree/master/src-todos-props) 任务列表，组件间通信：props
 
-[`src-todos2`](https://github.com/jance-hui/learnVue/tree/master/src-todos2) 任务列表，组件间通信：自定义事件、消息订阅与发布(PubSuB)、slot插槽
+[`src-todos-others`](https://github.com/jance-hui/learnVue/tree/master/src-todos-others) 任务列表，组件间通信：自定义事件、消息订阅与发布(PubSuB)、slot插槽
 ### 1. .vue文件结构
 
 ```vue
@@ -509,6 +509,10 @@ const id = this.$route.params.id*1 // 防止问文本
     
     this.$router.go( 1 )   请求下一个记录路由
 # 六、通信方式之vuex
+[`src-vuex-count`](https://github.com/jance-hui/learnVue/tree/master/src-vuex-count)  vuex 学习：计数器
+
+[`src-vuex-todos`](https://github.com/jance-hui/learnVue/tree/master/src-vuex-todos)  vuex 学习：todos
+
 `vuex` 对Vue应用中多个组件的共享状态进行 `集中式` 管理（读写）
 ### 1. vuex理解
 #### 1.1 状态自管理应用
